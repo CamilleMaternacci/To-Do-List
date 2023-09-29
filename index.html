@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/78eebef08c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="app">
+        <h1>ToDoList <i class="fa-solid fa-list-check"></i></h1>
+        <div class="input-area">
+            <input type="text" id="todo-input" placeholder="Add new task">
+            <button class="add-todo">+</button>
+        </div>
+        <div class="todo-area">
+            <h2 class="todo-title">Empty Todo</h2>
+            <ul class="todo-tasks">
+                <!-- <li>
+                    <div class="single-task">Wynieść śmieci</div>
+                    <div class="btns-area">
+                        <button class="btn-check"><i class="fa-solid fa-check"></i></button> <button class="btn-edit"><i
+                                class="fa-solid fa-pen-to-square"></i></button> <button class="btn-delete"><i
+                                class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </li> -->
+            </ul>
+            <button class="delete-all">Delete All</button>
+            <div class="popup">
+                <h2>Edit Task</h2>
+                <input type="text" id="todo-edit" placeholder="Edit your task">
+                <div class="edit-btns">
+                    <button class="btn-edit-todos"><i class="fa-solid fa-check"></i></button> <button
+                        class="btn-cancel"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+  background: rgb(49, 109, 252);
+  background: linear-gradient(90deg, rgba(21, 57, 133, 0.9) 10%, rgb(145, 81, 72) 50%, rgba(21, 57, 133, 0.9) 88%);
+}
+
+.app {
+  position: relative;
+  height: 750px;
+  width: 1200px;
+  border-radius: 8px;
+  overflow-y: auto;
+  border: 3px solid white;
+  background: rgb(49, 109, 252);
+  background: linear-gradient(90deg, rgb(91, 131, 240) 10%, rgba(218, 118, 94, 0.733) 50%, rgb(91, 131, 240) 88%);
+}
+.app h1 {
+  font-size: 4rem;
+  padding: 1em;
+  text-align: center;
+  color: white;
+}
+.app .input-area {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app .input-area input {
+  width: 600px;
+  padding: 0.2em;
+  font-size: 2rem;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 2px;
+}
+.app .input-area .error-input {
+  background-color: rgb(252, 113, 113);
+  border: 1px solid rgb(255, 255, 255);
+}
+.app .input-area .add-todo {
+  font-size: 1.45rem;
+  padding: 0.6em 2em;
+  margin-left: 1em;
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.app .input-area .add-todo:hover {
+  background-color: #f8714f;
+}
+.app .todo-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+.app .todo-area h2 {
+  font-size: 3rem;
+  padding: 1em;
+  color: white;
+}
+.app .todo-area ul {
+  list-style: none;
+  margin-top: 2em;
+}
+.app .todo-area ul li {
+  width: 690px;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-size: 2.2rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  text-align: center;
+}
+.app .todo-area ul li .single-task {
+  padding: 0.5em;
+  font-size: 2.2rem;
+  border-bottom: 1px solid black;
+  color: black;
+}
+.app .todo-area ul li .btns-area {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.2em;
+}
+.app .todo-area ul li .btns-area button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.app .todo-area ul li .btns-area button i {
+  padding-top: 0.5em;
+  font-size: 2.5rem;
+  color: black;
+  transition: color 0.3s;
+}
+.app .todo-area ul li .btns-area button i:hover {
+  color: #f8714f;
+}
+.app .todo-area ul li .btns-area button .task-done-icons {
+  color: rgb(163, 163, 163);
+}
+.app .todo-area ul li .btns-area .done-btn {
+  visibility: visible;
+}
+.app .todo-area ul li .btns-area .edit-btn {
+  visibility: visible;
+}
+.app .todo-area ul li .btns-area .delete-btn {
+  visibility: visible;
+}
+.app .todo-area ul li .border-btn {
+  border-top: 1px solid black;
+  padding: 0.2em;
+  margin: 0.5em;
+}
+.app .todo-area ul .task-done {
+  color: rgb(163, 163, 163);
+  background-color: rgba(25, 0, 0, 0.5);
+}
+.app .todo-area ul .task-done .btns-area button i {
+  color: rgb(163, 163, 163);
+}
+.app .todo-area ul .task-done .border-btn {
+  border-top: 1px solid rgb(163, 163, 163);
+}
+.app .todo-area .delete-all {
+  position: relative;
+  display: none;
+  font-size: 2rem;
+  margin-bottom: 1em;
+  padding: 0.5em 1.5em;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.app .todo-area .delete-all:hover {
+  background-color: #5a83f7;
+}
+.app .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 690px;
+  background-color: white;
+  border: 2px outset #f8714f;
+  border-radius: 5px;
+  z-index: 1;
+}
+.app .popup h2 {
+  color: black;
+  font-size: 2.5rem;
+  padding: 1em;
+}
+.app .popup input {
+  width: 600px;
+  padding: 0.2em;
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+.app .popup .error-input {
+  background-color: rgb(252, 113, 113);
+}
+.app .popup .edit-btns {
+  padding: 0.5em;
+}
+.app .popup .edit-btns button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.app .popup .edit-btns button i {
+  font-size: 3rem;
+  margin: 0.8em;
+  color: black;
+  transition: color 0.3s;
+}
+.app .popup .edit-btns button i:hover {
+  color: #f8714f;
+}
+.app .shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}/*# sourceMappingURL=style.css.map */
